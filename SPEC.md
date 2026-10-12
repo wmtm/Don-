@@ -36,6 +36,7 @@
 
 ### Brand — working name
 - **Doné** (Kreol: "to give"). Chosen by founder as working name.
+- **Display:** "Doné" with the accent everywhere on screen. **URL/handle spelling: `done`** (founder's choice, accepting the English "done" reading).
 - Caveats to resolve before launch: the accent can't be used reliably in URLs/emails, so the web address is likely `done.*`, which English speakers read as "done"; the standard Kreol Morisien spelling of "give" is closer to "donn"; domain and trademark availability not yet checked.
 
 ### Open
@@ -43,4 +44,4 @@
 - [x] Ownership: sole founder (may change later)
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [x] Revenue model: hybrid (see above); final rate after Phase 3
-- [~] Brand name: working name **Doné**; URL spelling and tone still open
+- [~] Brand name: working name **Doné**, URL spelling `done`; tone still open
