@@ -46,3 +46,11 @@
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [x] Revenue model: hybrid (see above); final rate after Phase 3
 - [~] Brand name: working name **Doné**, URL spelling `done`, tone warm + modern
+
+## Phase 2 — Mauritian context
+
+### Languages — decided
+- **Launch languages: English + French.** Kreol Morisien deferred to a later release (known trade-off: weaker Mauritian differentiation at launch).
+- All UI text lives in translation files from day one, so adding Kreol later needs no code change, only translated text.
+- **Each couple chooses their site's default language**; guests can switch language at any time.
+- Platform pages (home, signup, find a list) default to the visitor's browser language (EN/FR), falling back to English.
