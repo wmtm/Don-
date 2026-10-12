@@ -17,8 +17,15 @@
 - Payout destination is unresolved: couple's Mauritian account vs foreign (e.g. French/UK) account — see Phase 3.
 - Competitive risk: a diaspora couple in France can already use existing French services. Differentiation must come from Mauritian specifics (multi-event weddings, digital "lenvlop", Kreol/French/English, paying easily from Mauritius).
 
+### Legal entity — status
+- **No entity exists yet** (answer D). No owner/co-founder structure decided. No Mauritian business bank account.
+- **Working recommendation:** a new Mauritian domestic company (needed for local payment methods such as Juice / local acquiring). To be confirmed after Phase 3 payment research and legal advice.
+- **Launch gate:** we can design and build in test mode, but **no real payments and no public launch** until an entity exists, has a business bank account, and has been onboarded by a payment provider.
+- **Lead time risk:** company registration, bank account opening (KYC) and payment-provider onboarding can each take weeks; this is likely the critical path to launch, not the code.
+
 ### Open
-- [ ] Legal entity / merchant of record (registered Mauritian company? who? when?)
+- [ ] Legal entity / merchant of record: which jurisdiction and when (blocked on Phase 3 research)
+- [ ] Ownership: sole founder or co-founders (undecided)
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [ ] Revenue model
 - [ ] Brand name & tone
