@@ -20,12 +20,14 @@
 ### Legal entity — status
 - **No entity exists yet** (answer D). No owner/co-founder structure decided. No Mauritian business bank account.
 - **Working recommendation:** a new Mauritian domestic company (needed for local payment methods such as Juice / local acquiring). To be confirmed after Phase 3 payment research and legal advice.
+- **Founder:** sole founder, Mauritian citizen, resident in Mauritius. This makes a new Mauritian domestic company the natural choice (local residency also eases bank account opening).
+- **Timeline:** no launch date. Immediate goal is a **prototype ("maquette")** built with fake/test payments; legal and payment details are worked out later, before any real launch.
 - **Launch gate:** we can design and build in test mode, but **no real payments and no public launch** until an entity exists, has a business bank account, and has been onboarded by a payment provider.
 - **Lead time risk:** company registration, bank account opening (KYC) and payment-provider onboarding can each take weeks; this is likely the critical path to launch, not the code.
 
 ### Open
 - [ ] Legal entity / merchant of record: which jurisdiction and when (blocked on Phase 3 research)
-- [ ] Ownership: sole founder or co-founders (undecided)
+- [x] Ownership: sole founder (may change later)
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [ ] Revenue model
 - [ ] Brand name & tone
