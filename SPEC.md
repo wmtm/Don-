@@ -25,9 +25,18 @@
 - **Launch gate:** we can design and build in test mode, but **no real payments and no public launch** until an entity exists, has a business bank account, and has been onboarded by a payment provider.
 - **Lead time risk:** company registration, bank account opening (KYC) and payment-provider onboarding can each take weeks; this is likely the critical path to launch, not the code.
 
+### Process decision
+- **Fast track (option B):** grill only what the prototype needs (revenue model display, brand, languages, multi-event, gift types, couple-site sections), then build a prototype with test-mode payments. **Phase 3 (payments & compliance) must be completed in full before any real launch.**
+
+### Revenue model — decided (hybrid)
+- By default the **guest pays a transparent service fee** shown at checkout; the couple receives 100% of the gift amount.
+- The couple can toggle **"we cover the fees"**: the guest then pays only the gift amount and the fee is deducted from the couple's balance.
+- **Prototype placeholder fee: 4%** (configurable). The real rate and target margin will be set after Phase 3 provider research (local card processing estimated at ~2.5–4%, to verify).
+- Later add-ons (not MVP): premium templates, custom domain, vendor listings, partner commissions.
+
 ### Open
 - [ ] Legal entity / merchant of record: which jurisdiction and when (blocked on Phase 3 research)
 - [x] Ownership: sole founder (may change later)
 - [x] Project home: `wmtm/don-` (dedicated repo)
-- [ ] Revenue model
+- [x] Revenue model: hybrid (see above); final rate after Phase 3
 - [ ] Brand name & tone
