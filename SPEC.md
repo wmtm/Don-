@@ -34,9 +34,13 @@
 - **Prototype placeholder fee: 4%** (configurable). The real rate and target margin will be set after Phase 3 provider research (local card processing estimated at ~2.5–4%, to verify).
 - Later add-ons (not MVP): premium templates, custom domain, vendor listings, partner commissions.
 
+### Brand — working name
+- **Doné** (Kreol: "to give"). Chosen by founder as working name.
+- Caveats to resolve before launch: the accent can't be used reliably in URLs/emails, so the web address is likely `done.*`, which English speakers read as "done"; the standard Kreol Morisien spelling of "give" is closer to "donn"; domain and trademark availability not yet checked.
+
 ### Open
 - [ ] Legal entity / merchant of record: which jurisdiction and when (blocked on Phase 3 research)
 - [x] Ownership: sole founder (may change later)
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [x] Revenue model: hybrid (see above); final rate after Phase 3
-- [ ] Brand name & tone
+- [~] Brand name: working name **Doné**; URL spelling and tone still open
