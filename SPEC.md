@@ -1,6 +1,6 @@
 # SPEC — Mauritian Wedding Gift List (working title TBD)
 
-> Living spec, updated after each grilling phase. Status: **Phase 1 in progress**.
+> Living spec, updated after each grilling phase. Status: **Phase 1 done (legal entity deferred to Phase 3); Phase 2 in progress**.
 > Repo: `wmtm/don-` (moved from `wmtm/loopss`).
 
 ## Phase 1 — Vision & business model
@@ -37,6 +37,7 @@
 ### Brand — working name
 - **Doné** (Kreol: "to give"). Chosen by founder as working name.
 - **Display:** "Doné" with the accent everywhere on screen. **URL/handle spelling: `done`** (founder's choice, accepting the English "done" reading).
+- **Tone:** warm & family-centred at heart (soft earthy palette: sand, coral, lagoon green; rounded shapes; friendly reassuring copy that older relatives trust), with clean modern layouts and generous whitespace so it feels premium to diaspora couples.
 - Caveats to resolve before launch: the accent can't be used reliably in URLs/emails, so the web address is likely `done.*`, which English speakers read as "done"; the standard Kreol Morisien spelling of "give" is closer to "donn"; domain and trademark availability not yet checked.
 
 ### Open
@@ -44,4 +45,4 @@
 - [x] Ownership: sole founder (may change later)
 - [x] Project home: `wmtm/don-` (dedicated repo)
 - [x] Revenue model: hybrid (see above); final rate after Phase 3
-- [~] Brand name: working name **Doné**, URL spelling `done`; tone still open
+- [~] Brand name: working name **Doné**, URL spelling `done`, tone warm + modern
