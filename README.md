@@ -1,5 +1,5 @@
 # don-
 
-Wedding gift list ("cagnotte") and couple website platform, built for Mauritius and its diaspora.
+**Doné** — gift list ("cagnotte") and celebration website platform for weddings and other occasions, built for Mauritius and its diaspora.
 
-Status: product specification in progress — see [SPEC.md](SPEC.md). No code yet.
+Status: prototype specification ready for review — see [SPEC.md](SPEC.md). No code yet.
