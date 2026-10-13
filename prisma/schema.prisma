@@ -1,0 +1,277 @@
+// Doné data model. See SPEC.md §8.
+// Money is always stored as integer minor units (cents) alongside an ISO currency code.
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Locale {
+  en
+  fr
+}
+
+enum Currency {
+  MUR
+  EUR
+  GBP
+}
+
+enum OccasionType {
+  wedding
+  engagement
+  birthday
+  birth
+  religious
+  housewarming
+  graduation
+  retirement
+  other
+}
+
+enum Visibility {
+  public
+  unlisted
+}
+
+enum OccasionStatus {
+  draft
+  published
+  closed
+}
+
+enum VerificationStatus {
+  unverified
+  pending
+  verified
+}
+
+enum GiftKind {
+  envelope
+  fund
+  item
+}
+
+enum FeePaidBy {
+  guest
+  hosts
+}
+
+enum ContributionSource {
+  online
+  offline
+}
+
+enum ContributionStatus {
+  pending
+  paid
+  failed
+  refunded
+}
+
+enum PayoutStatus {
+  requested
+  paid
+  rejected
+}
+
+enum Attendance {
+  yes
+  no
+  maybe
+}
+
+model User {
+  id           String         @id @default(cuid())
+  email        String         @unique
+  passwordHash String
+  name         String
+  locale       Locale         @default(en)
+  isAdmin      Boolean        @default(false)
+  createdAt    DateTime       @default(now())
+  sessions     Session[]
+  occasions    OccasionHost[]
+}
+
+model Session {
+  // Stores a SHA-256 hash of the session token, never the token itself.
+  id        String   @id
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model Occasion {
+  id                 String             @id @default(cuid())
+  slug               String             @unique
+  type               OccasionType
+  title              String
+  hostNames          String
+  date               DateTime?
+  welcome            String?
+  story              String?
+  coverImage         String?
+  theme              String             @default("lagoon")
+  defaultLocale      Locale             @default(en)
+  currency           Currency           @default(MUR)
+  hostsCoverFees     Boolean            @default(false)
+  visibility         Visibility         @default(public)
+  passwordHash       String?
+  status             OccasionStatus     @default(draft)
+  verificationStatus VerificationStatus @default(unverified)
+  hidden             Boolean            @default(false)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  hosts         OccasionHost[]
+  events        Event[]
+  gifts         Gift[]
+  contributions Contribution[]
+  payouts       Payout[]
+  photos        Photo[]
+  faqItems      FaqItem[]
+
+  @@index([status, visibility, hidden])
+}
+
+model OccasionHost {
+  occasionId String
+  userId     String
+  createdAt  DateTime @default(now())
+  occasion   Occasion @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([occasionId, userId])
+  @@index([userId])
+}
+
+model Event {
+  id          String    @id @default(cuid())
+  occasionId  String
+  name        String
+  startsAt    DateTime?
+  endsAt      DateTime?
+  venueName   String?
+  address     String?
+  mapUrl      String?
+  dressCode   String?
+  notes       String?
+  rsvpEnabled Boolean   @default(true)
+  position    Int       @default(0)
+  occasion    Occasion  @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+  rsvps       Rsvp[]
+
+  @@index([occasionId, position])
+}
+
+model Rsvp {
+  id        String     @id @default(cuid())
+  eventId   String
+  guestName String
+  email     String?
+  phone     String?
+  attending Attendance
+  partySize Int        @default(1)
+  message   String?
+  createdAt DateTime   @default(now())
+  event     Event      @relation(fields: [eventId], references: [id], onDelete: Cascade)
+
+  @@index([eventId])
+}
+
+model Gift {
+  id            String         @id @default(cuid())
+  occasionId    String
+  kind          GiftKind
+  title         String
+  description   String?
+  image         String?
+  // fund: optional goal. item: unused (goal = unitPrice * quantity).
+  targetAmount  Int?
+  // item only: price of one unit and number of units wanted.
+  unitPrice     Int?
+  quantity      Int?
+  position      Int            @default(0)
+  archived      Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  occasion      Occasion       @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+  contributions Contribution[]
+
+  @@index([occasionId, position])
+}
+
+model Contribution {
+  id          String             @id @default(cuid())
+  occasionId  String
+  giftId      String?
+  guestName   String
+  guestEmail  String?
+  message     String?
+  // Guest asked that the hosts don't see the amount.
+  hideAmount  Boolean            @default(false)
+  // Gift amount the hosts are given (before fees).
+  amount      Int
+  // Service fee, whoever pays it.
+  fee         Int
+  feePaidBy   FeePaidBy
+  // What the guest is charged: amount + fee when the guest pays the fee, else amount.
+  charged     Int
+  currency    Currency
+  // item gifts: number of units given.
+  units       Int?
+  source      ContributionSource @default(online)
+  status      ContributionStatus @default(pending)
+  provider    String?
+  providerRef String?
+  thanked     Boolean            @default(false)
+  createdAt   DateTime           @default(now())
+  paidAt      DateTime?
+  occasion    Occasion           @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+  gift        Gift?              @relation(fields: [giftId], references: [id], onDelete: SetNull)
+
+  @@index([occasionId, status])
+  @@index([giftId, status])
+}
+
+model Payout {
+  id                String       @id @default(cuid())
+  occasionId        String
+  amount            Int
+  currency          Currency
+  status            PayoutStatus @default(requested)
+  bankDetailsMasked String
+  requestedAt       DateTime     @default(now())
+  paidAt            DateTime?
+  occasion          Occasion     @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+
+  @@index([occasionId])
+}
+
+model Photo {
+  id         String   @id @default(cuid())
+  occasionId String
+  url        String
+  caption    String?
+  position   Int      @default(0)
+  occasion   Occasion @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+
+  @@index([occasionId, position])
+}
+
+model FaqItem {
+  id         String   @id @default(cuid())
+  occasionId String
+  question   String
+  answer     String
+  position   Int      @default(0)
+  occasion   Occasion @relation(fields: [occasionId], references: [id], onDelete: Cascade)
+
+  @@index([occasionId, position])
+}

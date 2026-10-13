@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Doné — listes de cadeaux & sites de fête",
+    "description": "Listes de cadeaux et sites de célébration pour les familles mauriciennes, à Maurice et à l'étranger."
+  },
+  "nav": {
+    "find": "Trouver une liste",
+    "login": "Se connecter",
+    "signup": "Créer ma liste",
+    "language": "Langue"
+  },
+  "testMode": "Mode test — aucun argent réel n'est débité.",
+  "home": {
+    "eyebrow": "Mariages · naissances · anniversaires · toutes les fêtes",
+    "title": "Toute la famille offre, où qu'elle soit.",
+    "lead": "Créez une liste de cadeaux et un site de fête en une minute. Vos proches à Maurice et à l'étranger participent en ligne — une enveloppe digitale, une lune de miel à Rodrigues, un nouveau canapé — et vous recevez tout au même endroit.",
+    "ctaPrimary": "Créer ma liste gratuitement",
+    "ctaSecondary": "Trouver une liste",
+    "featuresTitle": "Pensé pour les fêtes mauriciennes",
+    "features": {
+      "envelope": {
+        "title": "L'enveloppe digitale",
+        "body": "Les invités offrent le montant de leur choix avec un message, comme le lenvlop — et peuvent garder le montant privé."
+      },
+      "events": {
+        "title": "Tous les événements, un seul site",
+        "body": "Haldi, mehndi, nikah, église, réception : chaque événement avec sa date, son lieu, son dress code et ses réponses."
+      },
+      "abroad": {
+        "title": "La famille ici et ailleurs",
+        "body": "Des listes en roupies, euros ou livres, pour que les proches à Port-Louis, Paris ou Londres participent facilement."
+      },
+      "fees": {
+        "title": "Des frais clairs et justes",
+        "body": "Création gratuite. De petits frais de service sont affichés au paiement — ou vous pouvez les prendre en charge pour vos invités."
+      }
+    }
+  },
+  "footer": {
+    "madeIn": "Fait avec amour à Maurice."
+  }
+}

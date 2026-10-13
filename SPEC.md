@@ -1,7 +1,7 @@
 # SPEC — Doné
 
 > Gift list ("cagnotte") and celebration website platform, built for Mauritius and its diaspora.
-> Living spec. Status: **fast-track grilling complete — prototype spec ready for review.**
+> Living spec. Status: **spec approved — building the prototype (see Build progress at the end).**
 > Phase 3 (payments & compliance) is **deferred, not skipped**: it must be completed before any real money moves.
 > Repo: `wmtm/don-`.
 
@@ -191,13 +191,13 @@ Home (names, date, cover photo, short welcome), **Our story / About**, **Events*
 
 ## 8. Tech & delivery
 
-### Stack (proposed — awaiting founder OK)
+### Stack ✅ (approved by founder)
 | Layer | Choice | Why |
 |---|---|---|
-| App | **Next.js (App Router) + TypeScript** | One codebase for pages + API; server rendering = fast on slow phones; huge hiring pool |
+| App | **Next.js 16 (App Router) + TypeScript** | One codebase for pages + API; server rendering = fast on slow phones; huge hiring pool. `cacheComponents` is off for the prototype (almost all pages are live data); revisit before Next 17 |
 | Styling | **Tailwind CSS** | Fast to build the design system; small CSS output |
-| i18n | **next-intl** | Locale routing + translation files (EN/FR now, Kreol later) |
-| Database | **PostgreSQL + Prisma** | Relational data with money; Prisma gives typed queries and migrations |
+| i18n | Small in-house helper + JSON translation files | Language = saved choice (cookie) → browser language → English. No language prefix in URLs, so occasion links stay `done.mu/<slug>`. A test keeps EN/FR keys in sync |
+| Database | **PostgreSQL 16 + Prisma 7** (pg driver adapter) | Relational data with money; Prisma gives typed queries and migrations |
 | Validation | **Zod** | One schema for forms and server checks |
 | Auth | Email + password, sessions stored in DB (small in-house module) | Few dependencies, easy to audit; magic links later |
 | Payments | `PaymentProvider` interface + **Fake provider** | Swap in the real provider after Phase 3 without touching business logic |
@@ -281,4 +281,7 @@ Real payments and payouts · Kreol · cross-currency conversion · partner store
 - ⛔ Lawyer questions (section 3).
 - ⛔ Domain/trademark for Doné.
 - ⛔ Founder review of tradition event presets.
-- ⛔ Founder OK on stack, data model, file structure and milestones → then build starts at M0.
+- ✅ Founder approved stack, data model, file structure and milestones.
+
+## Build progress
+- ✅ **M0 Skeleton** — Next.js 16 app, Prisma schema + initial migration, EN/FR switcher, Doné design tokens, test-mode banner, home page, fee/money/i18n unit tests, CI workflow.

@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "title": "Doné — gift lists & celebration websites",
+    "description": "Gift lists and celebration websites for Mauritian families, at home and abroad."
+  },
+  "nav": {
+    "find": "Find a list",
+    "login": "Log in",
+    "signup": "Create my list",
+    "language": "Language"
+  },
+  "testMode": "Test mode — no real money is charged.",
+  "home": {
+    "eyebrow": "Weddings · births · birthdays · every celebration",
+    "title": "The whole family gives, wherever they are.",
+    "lead": "Create a gift list and a celebration website in a minute. Relatives in Mauritius and abroad contribute online — a digital envelope, a honeymoon in Rodrigues, a new sofa — and you receive everything in one place.",
+    "ctaPrimary": "Create my list for free",
+    "ctaSecondary": "Find a list",
+    "featuresTitle": "Made for Mauritian celebrations",
+    "features": {
+      "envelope": {
+        "title": "The digital envelope",
+        "body": "Guests give any amount with a message, just like the lenvlop — and can keep the amount private."
+      },
+      "events": {
+        "title": "Every event, one site",
+        "body": "Haldi, mehndi, nikah, church, reception: each event with its date, venue, dress code and RSVP."
+      },
+      "abroad": {
+        "title": "Family here and abroad",
+        "body": "Lists in rupees, euros or pounds, so relatives in Port-Louis, Paris or London can give easily."
+      },
+      "fees": {
+        "title": "Clear, fair fees",
+        "body": "Free to create. A small service fee is shown at checkout — or you can choose to cover it for your guests."
+      }
+    }
+  },
+  "footer": {
+    "madeIn": "Made with love in Mauritius."
+  }
+}

@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/* Doné design tokens: warm and family-centred, with clean modern layouts. */
+@theme {
+  --color-sand-50: #fdfaf5;
+  --color-sand-100: #f8f1e7;
+  --color-sand-200: #efe3d1;
+  --color-sand-300: #e2cfb3;
+  --color-ink-900: #2b2723;
+  --color-ink-700: #4a433c;
+  --color-ink-500: #7a7067;
+  --color-coral-100: #fbe3dc;
+  --color-coral-500: #e07258;
+  --color-coral-600: #c95c43;
+  --color-coral-700: #a84a35;
+  --color-lagoon-100: #d7eeea;
+  --color-lagoon-500: #2a8a80;
+  --color-lagoon-600: #1f7068;
+  --color-lagoon-700: #175650;
+  --color-gold-500: #c49a3a;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-serif, Georgia, serif;
+
+  --radius-card: 1.25rem;
+}
+
+body {
+  background: var(--color-sand-50);
+  color: var(--color-ink-900);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-lagoon-500);
+  outline-offset: 2px;
+}
